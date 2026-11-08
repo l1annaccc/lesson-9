@@ -1,7 +1,32 @@
 def add_transaction(transactions, transaction_type, amount, category, description):
+    new_id = transactions[-1]["id"] + 1
+    
     if transaction_type not in ["income" or "expence"] :
-        print("Your transaction should be either income or expence")
+        print("Тип транзакції маж бути income або expense")
         return
 
+    if not isinstance (amount, ( int | float)) or amount <= 0:
+        print("Cума має бути додатнім числом")
+        return
 
+    if not category:
+        print("Категорія не має бути порожньою")
+        return
+
+    if not description :
+        print("Опис не має бути порожнім")
+        return
+
+    transaction = {
+    "id": 1,
+    "type": "income",
+    "amount": 15000,
+    "category": "Salary",
+    "description": "Monthly salary"
+    }
+    transactions.append(transaction)
+    print("Транзакцію додано")
+
+
+    
 
