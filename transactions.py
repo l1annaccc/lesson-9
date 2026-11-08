@@ -1,8 +1,4 @@
 def add_transaction(transactions, transaction_type, amount, category, description):
-    #if transaction_type not in ["income", "expense"]:
-      #  print("Тип транзакції маж бути income або expense")
-       # return
-
     if not isinstance (amount, ( int , float)) or amount <= 0:
         print("Cума має бути додатнім числом")
         return
