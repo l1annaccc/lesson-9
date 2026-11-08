@@ -27,6 +27,3 @@ def add_transaction(transactions, transaction_type, amount, category, descriptio
     transactions.append(transaction)
     print("Транзакцію додано")
 
-
-def show_transactions(transactions):
-   
