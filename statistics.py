@@ -12,4 +12,5 @@ def calculate_balance(transactions):
     return income - expense
 
 
-
+def filter_by_category(transactions, category):
+    return [i for i in transactions if i["category"].lower() == category.lower()]
