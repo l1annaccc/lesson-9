@@ -41,3 +41,10 @@ def show_transactions(transactions):
        return
 
 
+def delete_transaction(transactions, transaction_id):
+    for i in transactions :
+        if i["id"] == transaction_id :
+            transactions.remove(i)
+            print("Транзакцію видалено")
+        else :
+            print("Транзакцію не знайдено")
