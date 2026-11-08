@@ -1,5 +1,5 @@
 def add_transaction(transactions, transaction_type, amount, category, description):
-    new_id = transactions[-1]["id"] + 1
+    new_id = transactions[-1]["id"] + 1 if transaction else 1
     
     if transaction_type not in ["income" or "expence"] :
         print("Тип транзакції маж бути income або expense")
@@ -18,15 +18,15 @@ def add_transaction(transactions, transaction_type, amount, category, descriptio
         return
 
     transaction = {
-    "id": 1,
-    "type": "income",
-    "amount": 15000,
-    "category": "Salary",
-    "description": "Monthly salary"
+    "id": new_id,
+    "type": transaction_type,
+    "amount": float(amount),
+    "category": category,
+    "description": description
     }
     transactions.append(transaction)
     print("Транзакцію додано")
 
 
-    
-
+def show_transactions(transactions):
+   
