@@ -1,7 +1,5 @@
 def add_transaction(transactions, transaction_type, amount, category, description):
-    new_id = transactions[-1]["id"] + 1 if transaction else 1
-    
-    if transaction_type not in ["income" or "expence"] :
+    if transaction_type not in ["income", "expense"] :
         print("Тип транзакції маж бути income або expense")
         return
 
@@ -17,6 +15,7 @@ def add_transaction(transactions, transaction_type, amount, category, descriptio
         print("Опис не має бути порожнім")
         return
 
+    new_id = transactions[-1]["id"] + 1 if transactions else 1
     transaction = {
     "id": new_id,
     "type": transaction_type,
@@ -37,14 +36,14 @@ def show_transactions(transactions):
    print(f"{'ID' :<3} | {'TYPE' :<7} | {'AMOUNT' :<9} | {'CATEGORY' :<11} | {'DESCRIPTION' :<13}"  )
    print("-" * 50)
    for i in transactions :
-       print(f"{['id']:<3} | {['type']:<7} | {['amount']:<9} | {['category']:<3} | {['description']:<3}")
-       return
+       print(f"{i['id']:<3} | {i['type']:<7} | {i['amount']:<9} | {i['category']:<3} | {i['description']:<3}")
+       
 
 
 def delete_transaction(transactions, transaction_id):
-    for i in transactions :
-        if i["id"] == transaction_id :
+    for i in transactions:
+        if i["id"] == transaction_id:
             transactions.remove(i)
             print("Транзакцію видалено")
-        else :
-            print("Транзакцію не знайдено")
+            return
+    print("Транзакцію не знайдено")
