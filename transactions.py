@@ -1,7 +1,7 @@
 def add_transaction(transactions, transaction_type, amount, category, description):
-    if transaction_type not in ["income", "expense"]:
-        print("Тип транзакції маж бути income або expense")
-        return
+    #if transaction_type not in ["income", "expense"]:
+      #  print("Тип транзакції маж бути income або expense")
+       # return
 
     if not isinstance (amount, ( int , float)) or amount <= 0:
         print("Cума має бути додатнім числом")
@@ -36,7 +36,7 @@ def show_transactions(transactions):
    print(f"{'ID' :<3} | {'TYPE' :<7} | {'AMOUNT' :<9} | {'CATEGORY' :<11} | {'DESCRIPTION' :<13}"  )
    print("-" * 50)
    for i in transactions :
-       print(f"{i['id']:<3} | {i['type']:<7} | {i['amount']:<9} | {i['category']:<3} | {i['description']:<3}")
+        print(f"{i['id']:<3} | {i['type']:<7} | {i['amount']:<9} | {i['category']:<11} | {i['description']:<3}")
        
 
 
