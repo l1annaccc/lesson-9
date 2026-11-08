@@ -8,7 +8,7 @@ def calculate_expenses(transactions):
 
 def calculate_balance(transactions):
     income = calculate_income(transactions)
-    expense = calculate_expenses
+    expense = calculate_expenses(transactions)
     return income - expense
 
 
